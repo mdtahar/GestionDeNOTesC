@@ -1,0 +1,72 @@
+FORMATAGE.C : On trouve le main de notre fichier MYFORMATAGE.C , correspond à la commande
+		./formatage . 
+MYFORMATAGE.C : int_nbr_champs(char *fichier) -> elle prend en paramètre un fichier, et renvoie un tableau correspondant au nbr de champs de chaque ligne
+		 max_tab(*tab,taille) -> prend en paramètre un Tab de int et renvoi son max 
+		formatage(fichier,fichier_sorti,bit_formatage) -> prend en paramètre un fichier qui est le fichier d'entrer , et fais effectue le formatage tel qu'il est demandé en 		écrivant dans fichier_sorti , bit_formatage sert comme drapeau pour les options.
+
+FUSION.C : On trouve le main de notre fichier MYFUSION.C,correspond à la commande ./fusion
+MYFUSION.C : void fusion(formule,fichier1,fichier2,car_sep,fichier_sorti,bit_fusion) -> prends une formule, un premier fichier , un deuxième fichier, un séparateur, et fichier sorti 		ou on imprime le resultation de notre commande, le bit_fusion sert comme drapeau pour les options. 
+
+MOYENNE_PONDEREE.C : On trouve le main de notre fichier MOYENNE_PONDEREE.C,correspond à la commande ./moyenne_ponderee
+
+MYMOYENNE.C : on trouve une structure Formule qui sert à stocker la formule donner comme parametre de notre commande 
+		allouer_Formule(taille) -> allouer une Formule d'une taille donnée formule(formule) -> prend en paramètre un char* et construit la Formule correspondante 			moyenne(fichier,fichier_sorti_,formule,sep,bit_moyenne) -> prend en paramètre un fichier , une chaine de caractère correspondant à la formule, et calcule la moyenne 		suivant la formule en écrivant le tout dans fichier_sorti, bit_moyenne sert comme drapeau pour les options.
+
+TRI.C :  On trouve le main de notre fichier tri.C,correspond à la commande ./tri
+MYTRI.C : tri_ligne(drapeau,mem_fichier * fichier, int champ) -> prend en paramètre une mémoire fichier qui correspond a la structure de stockage du fichier , un int champ qui est 		l'indice du champ avec le quel on tri, et un drapeau correspendant au Type de tri,  renvoie un tableau de ligne trié, correspond aux indices des 				lignes triés en prenant en compte le champ donné 
+		tri_numerique(chaine1,chaine2) -> prends en paramètre deux chaines de caractère et renvoie 1 si chaine1>chaine2 numériquement ou 0 si le contraire 
+		mytri(drapeau, fichier,cham,sep, fichier_sorti,bit_tri) -> effectue l'écriture 	dans le fichier sorti , en effectuant le tri via les fonctions précédentes, 		bit_tri sert 	comme drapeau pour les options 
+
+
+UNION.C : On trouve le main de notre fichier union.c, correspond à la commande ./union
+MYUNION.C : ouverture_fichier(nom_fichier) -> prend une chaine de caractère et renvoie un FILE correspondant au nom_fichier (ouvre en lecture) 
+	copy_fic(src, File fdest) -> prend une chaine de caractère correspondant à un fichier, l'ouvre et le Cope dans FILE fdst
+	myunion(nbr_fichier,tableau_de_fichier,separateur,nom_fichier_sorti,bit_union) -> prend en paramètre le nombre de fichier pour les quels on fait l'union, un tableau de 	fichier qui correspond aux fichiers aux quels ont fait l'union, un séparateur et écris le résultat de union dans le fichier de sorti , bit_union sert de drapeau pour les 	options 
+
+SELECT.C : structure Champ, permet de stoker le fait que champ à déjà été trouvé ou pas,
+	allouer_champ() -> alloue la structure Champ, en mettant trouver à 0 
+	free_champ() -> livers la memoire de Champ
+	remplire_champ(char *champ) -> prend une chaine de caractère corresepedant à un champs et renvoie la stricte remplie 
+	myselect(fichier,parametre,sep,fichier_sorti,bit_select) -> prend en paramètre un fichier, une chaine de caractère correspondant aux paramètre, et effectue le 			sélect en utilisant les fuction precedemant déclaré.
+
+structure.c : correspond à la structure pour stocker notre fichier, on l'a appelé mem_fichier, on y stocke le nbr_champs, nbr_ligne, séparateur , et un 					tableau 2D de chaine de caractère correspondant aux champs de chèques ligne. 
+		nb_champs(fichier) -> renvoie le nombre de champs du fichier donné 
+		nb_ligne(fichier) -> renvoie le nombre de ligne du fichier donné 
+		comparer_nb_champs(nb_param,char* fichier,...) -> compare le nb_champ d'un nombre variable de fichier donné en paramètre 
+		allouer_memfichier(nbr_champs,nbr_ligne) -> fait l'allocation de notre 	structure qui sert à stocker notre fichier 
+		free_memfichier(mf,nb_champ,nb_ligne) -> libéré la mémoire occupée par mf qui donnes en paramètre 
+		affiche_memfichier(mf) -> affiche les champs stocker dans mf
+		copie_memoire_fichier(séparateur, source,dest) -> effectue la copie d'un fichier qui est stocker dans notre structure , dans un FILE dest 
+		separateur(fichier) -> renvoie un caractère correspondant au séparateur du fichier 
+		stockage_fichier(fichier) -> effectue le stockage du fichier en paramètre dans une memoire et la renvoie 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+./union : 
+	La commande union est bien implémentée, toute les options marchent comme demandé .
+
+
+./select : 
+	La commande select est bien implémentée, toutes les options marchent comme demandé .
+	
+
+./tri : 
+	la commande tri est bien implémentée , toutes les options marchent comme demandé . 
+	
+
+./moyenne_ponderee : la commande moyenne_ponderee et bien implémentée , toutes les options marchent comme demandé 
+	
+
+./fusion : 
+	la commande moyenne_ponderee et bien implémentée , toutes les options marchent comme demandé 
+
+./formatage : 
+	la commande moyenne_ponderee et bien implémentée , l'option -o a été implémentée
+ 
+Toute la memoire a été géré convenablement, il n'y a pas de fuite memoire ni de fichier ouvert , sauf dans ./select ou y a un free qu'on arrive pas à faire donc on a une petite fuite de memoire dessus. 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SAIDEN OMAR                                    TAHI MOHAND TAHAR
